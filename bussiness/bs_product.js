@@ -1,10 +1,15 @@
 let idAutoIncrement = 2
 
-const listProducts = [
+let listProducts = [
   { id: 1, product: 'milk', price: 7 }
 ];
 
 exports.list = () => listProducts
+
+exports.toEmpty = () => {
+  listProducts = []
+  idAutoIncrement = 1
+}
 
 exports.getById = (id) => {
   const product = listProducts.find(product => product.id == id)
